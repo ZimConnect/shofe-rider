@@ -1,7 +1,7 @@
 workflows:
   android-release:
     name: Android Release
-    instance_type: mac_mini_m1
+    - flutter build apk --release -t lib/main.dart
     max_build_duration: 60
     scripts:
       - flutter packages pub get
