@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193326587219",
+    "project_id": "shofe-af038",
+    "storage_bucket": "shofe-af038.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193326587219:android:05a3acf19142d3fe7c15a6",
+        "android_client_info": {
+          "package_name": "com.shofe.rider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHTjWojELiV8Ou-SrMFiXE270xgNuvCGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}Firebase config
