@@ -1,15 +1,18 @@
-
-    workflows:
-      shofe-rider:
-        name: Shofe Rider Build
-        instance_type: mac_mini_m1
-        max_build_duration: 60
-        environment:
-          flutter: stable
-        scripts:
-          - name: Clean
-            script: |
-              flutter clean
-              flutter pub get
-        artifacts:
-          - build/app/outputs/flutter-apk/*.apk
+workflows:
+  shofe-rider:
+    name: Shofe Rider Build
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: 3.22.0
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Flutter clean
+        script: flutter clean
+      - name: Get packages
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
