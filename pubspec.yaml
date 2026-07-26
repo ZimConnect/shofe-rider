@@ -1,3 +1,4 @@
+
 name: shofe_rider
 description: Shofe Rider App
 publish_to: 'none'
@@ -9,9 +10,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # ADD YOUR REAL PACKAGES HERE
+  google_maps_flutter: ^2.5.0
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  cloud_firestore: ^4.13.6
+  geolocator: ^10.1.0
+  permission_handler: ^11.3.0
+  http: ^1.1.0
+  provider: ^6.1.1
+
+  cupertino_icons: ^1.0.2
 
 flutter:
   uses-material-design: true
-  
+
 dependency_overrides:
   flutter_plugin_android_lifecycle: ^2.0.14
