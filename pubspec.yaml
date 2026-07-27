@@ -13,10 +13,10 @@ dependencies:
   # GOOGLE MAPS
   google_maps_flutter: ^2.5.0
   
-  # FIREBASE - V2 COMPLIANT VERSIONS
+  # FIREBASE - OLD STABLE V2
   firebase_core: ^2.15.1
-firebase_auth: ^4.9.0
-firebase_firestore: ^4.9.0
+  firebase_auth: ^4.9.0
+  firebase_firestore: ^4.9.0
   
   # LOCATION + PERMISSIONS
   permission_handler: ^11.3.1
