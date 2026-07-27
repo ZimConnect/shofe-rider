@@ -10,14 +10,19 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # YOUR REAL PACKAGES HERE
+  # GOOGLE MAPS
   google_maps_flutter: ^2.5.0
+  
+  # FIREBASE - V2 COMPLIANT VERSIONS
   firebase_core: ^2.24.2
-firebase_auth: ^4.15.3
-firebase_firestore: ^4.13.6
-  cloud_firestore: ^4.17.5
+  firebase_auth: ^4.15.3
+  firebase_firestore: ^4.13.6
+  
+  # LOCATION + PERMISSIONS
   permission_handler: ^11.3.1
   geolocator: ^12.0.0
+  
+  # OTHER
   image_picker: ^1.1.2
   http: ^1.2.2
   provider: ^6.1.2
