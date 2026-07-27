@@ -1,35 +1,21 @@
-name: shofe_rider
-description: Shofe Rider App
-publish_to: 'none'
-version: 1.0.0+1
-
-environment:
-  sdk: '>=3.0.0 <4.0.0'
-
 dependencies:
   flutter:
     sdk: flutter
 
+  # STATE MANAGEMENT
+  provider: ^6.1.2
+
+  # HTTP + JSON
+  http: ^1.1.2
+
   # GOOGLE MAPS
   google_maps_flutter: ^2.5.0
-  
-  # FIREBASE - OLD STABLE V2
+
+  # FIREBASE - OLD STABLE V2 FOR FLUTTER 3.22.3
   firebase_core: ^2.8.0
-firebase_auth: ^4.6.3
-firebase_firestore: ^4.4.5
-  
+  firebase_auth: ^4.6.3
+  firebase_firestore: ^4.4.5
+
   # LOCATION + PERMISSIONS
   permission_handler: ^11.3.1
-  geolocator: ^12.0.0
-  
-  # OTHER
-  image_picker: ^1.1.2
-  http: ^1.2.2
-  provider: ^6.1.2
-  superjson: ^1.0.2
-
-flutter:
-  uses-material-design: true
-
-dependency_overrides:
-  flutter_plugin_android_lifecycle: ^2.0.22
+  geolocator: ^10.0.0
