@@ -1,30 +1,37 @@
 name: shofe_rider
-description: Shofe Rider - ZimConnect ride hailing app
+description: "Shofe Rider App"
 publish_to: 'none'
-
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.2 <4.0.0'
-  flutter: '>=3.13.0'
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: "3.22.3"
 
 dependencies:
   flutter:
     sdk: flutter
-
-  # FIREBASE - WORKS WITH FLUTTER 3.24.3
+  
+  # Firebase - Versions that work with Flutter 3.22.3
   firebase_core: ^2.24.2
   firebase_auth: ^4.15.3
-  firebase_firestore: ^4.13.6
+  firebase_firestore: ^4.15.3  # <- FIXED
+  firebase_storage: ^11.5.6
+  firebase_messaging: ^14.7.10
 
-  # STATE + NETWORK
+  # Other common packages - update these too if you have them
+  cupertino_icons: ^1.0.6
   provider: ^6.1.2
-  http: ^1.1.2
-
-  # MAPS + LOCATION
   google_maps_flutter: ^2.5.3
-  geolocator: ^10.1.1
-  permission_handler: ^11.3.1
+  geolocator: ^11.0.0
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
+  
+  # assets:
+  #   - assets/images/
