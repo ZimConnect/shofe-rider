@@ -1,38 +1,36 @@
-
-1  workflows:
-2    shofe-rider-android:
-3      name: Shofe Rider Android Release
-4      instance_type: mac_mini_m1
-5      max_build_duration: 60
-6      environment:
-7        flutter: 3.22.3
-8        cocoapods: default
-9        xcode: latest
-10     scripts:
-11     11       - name: Force Flutter 3.22.3
-12         script: |
-13           flutter --version
-14           flutter channel stable
-15           flutter upgrade
-16           flutter --version
-17       - name: NUKE V1 FILES
-18         script: |
-19           rm -rf android/app/src/main/java/io/flutter/app/*
-20           rm -rf android/app/src/main/java/com/shoferider/*
-21       - name: Install Dependencies
-22         script: flutter pub get
-22         script: flutter pub get
-23       - name: Clean Android
-24         script: |
-25           cd android
-26           chmod +x ./gradlew
-27           ./gradlew clean
-28           cd ..
-29       - name: Build Android APK
-30         script: flutter build apk --release
-31     artifacts:
-32       - build/app/outputs/flutter-apk/*.apk
-33     publishing:
-34       email:
-35         recipients:
-36           - shofe.zimconnect@gmail.com
+workflows:
+  shofe-rider-android:
+    name: Shofe Rider Android Release
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      flutter: 3.22.3
+      cocoapods: default
+      xcode: latest
+    scripts:
+      - name: Force Flutter 3.22.3
+        script: |
+          flutter --version
+          flutter channel stable
+          flutter upgrade
+          flutter --version
+      - name: NUKE V1 FILES
+        script: |
+          rm -rf android/app/src/main/java/io/flutter/app/*
+          rm -rf android/app/src/main/java/com/shoferider/*
+      - name: Install Dependencies
+        script: flutter pub get
+      - name: Clean Android
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew clean
+          cd ..
+      - name: Build Android APK
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - shofe.zimconnect@gmail.com
