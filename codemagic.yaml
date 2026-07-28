@@ -1,18 +1,20 @@
 workflows:
-  shofe-rider:
-    name: Shofe Rider Build
-    instance_type: mac_mini_m1
+  shofe-rider-android:
+    name: Shofe Rider Android Release
     max_build_duration: 60
+    instance_type: mac_mini_m1
     environment:
-      flutter: 3.22.0
-      xcode: latest
+      flutter: stable  # Uses latest stable Flutter so firebase ^4.13.6 works
       cocoapods: default
+      xcode: latest
     scripts:
-      - name: Flutter clean
-        script: flutter clean
-      - name: Get packages
+      - name: Install dependencies
         script: flutter pub get
-      - name: Build APK
-        script: flutter build apk --release
+      - name: Build Android APK
+        script: flutter build apk --release --split-per-abi
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - shofe.zimconnect@gmail.com  # You will get build results here
