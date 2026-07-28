@@ -12,10 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # FIREBASE - STABLE V2 FOR COMPATIBILITY
-  firebase_core: ^2.8.0
-  firebase_auth: ^4.6.3
-  firebase_firestore: ^4.4.5
+  # FIREBASE - V4 COMPATIBLE WITH FLUTTER 3.24.3
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  firebase_firestore: ^4.13.6
 
   # OTHER PACKAGES
   provider: ^6.1.2
