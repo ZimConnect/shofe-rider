@@ -11,12 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
   
-  # Firebase - Versions that 100% work with Flutter 3.22.3
-  firebase_core: ^2.25.7
-  firebase_auth: ^4.17.9
-  firebase_firestore: ^4.17.4
-  firebase_storage: ^11.6.12
-  firebase_messaging: ^14.7.21
+  # Firebase - Stable versions for Flutter 3.22.3
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  firebase_firestore: ^4.13.6
+  firebase_storage: ^11.5.6
+  firebase_messaging: ^14.6.13
 
   # Flutter defaults
   cupertino_icons: ^1.0.6
