@@ -17,7 +17,11 @@ workflows:
       - name: Install Dependencies
         script: flutter pub get
       - name: Clean Android
-        script: cd android && ./gradlew clean
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew clean
+          cd ..
       - name: Build Android APK
         script: flutter build apk --release
     artifacts:
@@ -25,4 +29,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - shofe.zimconnect@gmail.com  # <-- FIXED
+          - shofe.zimconnect@gmail.com
