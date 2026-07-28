@@ -1,4 +1,4 @@
-package com.example.shofe_rider
+package com.zimconnect.shofe_rider
 
 import io.flutter.embedding.android.FlutterActivity
 
