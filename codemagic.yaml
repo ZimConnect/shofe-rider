@@ -8,10 +8,17 @@ workflows:
       cocoapods: default
       xcode: latest
     scripts:
-      - name: Install dependencies
-        script: flutter pub get
-      - name: Build Android APK
-        script: flutter build apk --release --split-per-abi
+      scripts:
+    - name: Install Flutter 3.22.3
+    script: |
+      flutter --version
+      flutter channel stable
+      flutter upgrade
+      flutter --version
+    - name: Install dependencies
+    script: flutter pub get
+    - name: Build Android APK
+    script: flutter build apk --release --split-per-abi
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
     publishing:
