@@ -1,8 +1,8 @@
 workflows:
   shofe-rider-android:
     name: Shofe Rider Android Release
-    max_build_duration: 60
     instance_type: mac_mini_m1
+    max_build_duration: 60
     environment:
       flutter: 3.22.3
       cocoapods: default
@@ -14,13 +14,15 @@ workflows:
           flutter channel stable
           flutter upgrade
           flutter --version
-      - name: Install dependencies
+      - name: Install Dependencies
         script: flutter pub get
+      - name: Clean Android
+        script: cd android && ./gradlew clean
       - name: Build Android APK
-        script: flutter build apk --release --split-per-abi
+        script: flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
     publishing:
       email:
         recipients:
-          - shofe.zimconnect@gmail.com
+          - shofe.zimconnect@gmail.com  # <-- FIXED
