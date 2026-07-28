@@ -16,23 +16,19 @@
             android:windowSoftInputMode="adjustResize">
             
             <meta-data
-                android:name="io.flutter.embedding.android.NormalTheme"
-                android:resource="@style/NormalTheme" />
-                
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+              
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        
         <meta-data
-            android:name="io.flutter.embedding.android.SplashScreenDrawable"
-            android:resource="@drawable/launch_background" />
-
-        <!-- THIS LINE KILLS V1 FOREVER -->
-        <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
-
+          android:name="io.flutter.embedding.android.SplashScreenDrawable"
+          android:resource="@drawable/launch_background" />
+          
     </application>
 </manifest>
