@@ -9,17 +9,18 @@
 8        cocoapods: default
 9        xcode: latest
 10     scripts:
-11       11       - name: Force Flutter 3.22.3
+11     11       - name: Force Flutter 3.22.3
 12         script: |
 13           flutter --version
 14           flutter channel stable
 15           flutter upgrade
 16           flutter --version
-17       - name: NUKE V1 FILES              # <-- ADD THESE 4 LINES
+17       - name: NUKE V1 FILES
 18         script: |
 19           rm -rf android/app/src/main/java/io/flutter/app/*
 20           rm -rf android/app/src/main/java/com/shoferider/*
-21       - name: Install Dependencies       # <-- This was 17, now 21
+21       - name: Install Dependencies
+22         script: flutter pub get
 22         script: flutter pub get
 23       - name: Clean Android
 24         script: |
