@@ -1,6 +1,7 @@
 name: shofe_rider
 description: "Shofe Rider App for Zimbabwe"
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
@@ -10,24 +11,24 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  
+
   # Firebase
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
   cloud_firestore: ^5.4.4
-  
+
   # Maps & Location
   google_maps_flutter: ^2.8.0
   geolocator: ^12.0.0
-  
+
   # Other
   http: ^1.2.2
   provider: ^6.1.2
-dev_dependencies:
+
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  flutter_launcher_icons: ^0.14.3
+  flutter_launcher_icons: ^0.13.1  # FIXED: Downgraded from 0.14.3 to avoid v1 embedding
 
 flutter_launcher_icons:
   android: true
@@ -37,5 +38,6 @@ flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
+  
   assets:
     - assets/
