@@ -23,7 +23,6 @@ dependencies:
   # Other
   http: ^1.2.2
   provider: ^6.1.2
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
