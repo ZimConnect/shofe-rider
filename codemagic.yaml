@@ -7,19 +7,27 @@ workflows:
       flutter: 3.22.3
       cocoapods: default
       xcode: latest
-    scripts:
-      - name: Force Flutter 3.22.3
-        script: |
-          flutter --version
-          flutter channel stable
-          flutter upgrade
-          flutter --version
-      - name: Install Dependencies
-        script: flutter pub get
-      - name: Clean Android
-        script: |
-          cd android
-          chmod +x ./gradlew
+    10     scripts:
+11       - name: Force Flutter 3.22.3
+12         script: |
+13           flutter --version
+14           flutter channel stable
+15           flutter upgrade
+16           flutter --version
+17       - name: NUKE V1 FILES                     # <-- NEW LINE
+18         script: |                               # <-- NEW LINE
+19           rm -rf android/app/src/main/java/io/flutter/app/*    # <-- NEW LINE
+20           rm -rf android/app/src/main/java/com/shoferider/*    # <-- NEW LINE
+21       - name: Install Dependencies
+22         script: flutter pub get
+23       - name: Clean Android
+24         script: |
+25           cd android
+26           chmod +x ./gradlew
+27           ./gradlew clean
+28           cd ..
+29       - name: Build Android APK
+30         script: flutter build apk --release
           ./gradlew clean
           cd ..
       - name: Build Android APK
