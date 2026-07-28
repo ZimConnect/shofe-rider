@@ -1,38 +1,42 @@
 name: shofe_rider
-description: "Shofe Rider App"
+description: "Shofe Rider App for Zimbabwe"
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
-  flutter: "3.22.3"
 
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.8
   
-  # Firebase - Stable versions for Flutter 3.22.3
-  firebase_core: ^2.24.2
-  firebase_auth: ^4.15.3
-  firebase_firestore: ^4.13.6
-  firebase_storage: ^11.5.6
-  firebase_messaging: ^14.6.13
-
-  # Flutter defaults
-  cupertino_icons: ^1.0.6
+  # Firebase
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  
+  # Maps & Location
+  google_maps_flutter: ^2.8.0
+  geolocator: ^12.0.0
+  
+  # Other
+  http: ^1.2.2
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 21
 
 flutter:
   uses-material-design: true
-    dev_dependencies:
-      flutter_launcher_icons: ^0.14.3
-
-    flutter_launcher_icons:
-      android: true
-      ios: true
-      image_path: "assets/icon.png"
-      min_sdk_android: 21
+  assets:
+    - assets/
