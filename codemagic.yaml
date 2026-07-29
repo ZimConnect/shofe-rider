@@ -20,8 +20,11 @@ workflows:
           flutter --version
       - name: NUKE V1 FILES
         script: |
-          rm -rf android/app/src/main/java/io/flutter/app/*
-          rm -rf android/app/src/main/java/com/shoferider/*
+      23:   script: |
+24:     rm -f android/app/src/main/java/io/flutter/app/FlutterActivity.java
+25:     rm -f android/app/src/main/kotlin/**/MainActivity.java
+26:     rm -f android/app/src/main/kotlin/**/MainActivity.kt
+27:     echo "V1 files deleted successfully"
       - name: Install Dependencies
         script: flutter pub get
       - name: Clean Android
