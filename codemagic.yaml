@@ -39,7 +39,3 @@ workflows:
       email:
         recipients:
           - shofer.zimconnect@gmail.com
-  triggering:
-    events:
-      - push
-    branch_pattern: main
