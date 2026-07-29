@@ -12,7 +12,7 @@ workflows:
         script: |
           echo "Checking AndroidManifest"
           cat android/app/src/main/AndroidManifest.xml | grep flutterEmbedding
-      - name: Force Flutter 3.22.3
+      - name: Force Flutter 3.27.4
         script: |
           flutter --version
           flutter channel stable
