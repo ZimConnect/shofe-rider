@@ -1,5 +1,5 @@
 workflows:
-  shofe-rider-android:
+  shoferider-android:
     name: Shofe Rider Android Release
     instance_type: mac_mini_m1
     max_build_duration: 60
@@ -8,29 +8,27 @@ workflows:
       cocoapods: default
       xcode: latest
     scripts:
-    scripts:
-    - name: VERIFY V2
-    script: |
-      echo "Checking AndroidManifest"
-      cat android/app/src/main/AndroidManifest.xml | grep flutterEmbedding
-    - name: Force Flutter 3.22.3
-    script: |
-      flutter --version
-      flutter channel stable
-      flutter upgrade
-      flutter --version
-    - name: NUKE V1 FILES
-    script: |
-      rm -f android/app/src/main/java/io/flutter/app/FlutterActivity.java
-      rm -f android/app/src/main/kotlin/**/MainActivity.java
-      rm -f android/app/src/main/kotlin/**/MainActivity.kt
-      echo "V1 files deleted successfully"
-    - name: Install Dependencies
-    script: flutter pub get
+      - name: VERIFY V2
+        script: |
+          echo "Checking AndroidManifest"
+          cat android/app/src/main/AndroidManifest.xml | grep flutterEmbedding
+      - name: Force Flutter 3.22.3
+        script: |
+          flutter --version
+          flutter channel stable
+          flutter upgrade
+          flutter --version
+      - name: NUKE V1 FILES
+        script: |
+          rm -f android/app/src/main/java/io/flutter/app/FlutterActivity.java
+          rm -f android/app/src/main/kotlin/**/MainActivity.java
+          rm -f android/app/src/main/kotlin/**/MainActivity.kt
+          echo "V1 files deleted successfully"
+      - name: Install Dependencies
+        script: flutter pub get
       - name: Clean Android
         script: |
           cd android
-          chmod +x ./gradlew
           ./gradlew clean
           cd ..
       - name: Build Android APK
@@ -40,4 +38,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - shofe.zimconnect@gmail.com
+          - shofer.zimconnect@gmail.com
