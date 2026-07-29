@@ -36,6 +36,12 @@ workflows:
           cd android
           ./gradlew clean
           cd ..
+       - name: FIND V1 PLUGINS
+        script: |
+          echo "Checking which plugins use V1"
+          cd android
+          ./gradlew app:dependencies | grep -i flutter
+          cd ..
       - name: Build Android APK
         script: flutter build apk --release
     artifacts:
