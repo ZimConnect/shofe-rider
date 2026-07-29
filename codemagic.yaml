@@ -18,12 +18,17 @@ workflows:
           flutter channel stable
           flutter upgrade
           flutter --version
-      - name: NUKE V1 FILES
+      - name: NUKE V1 FILES EVERYWHERE
         script: |
-          rm -f android/app/src/main/java/io/flutter/app/FlutterActivity.java
-          rm -f android/app/src/main/kotlin/**/MainActivity.java
-          rm -f android/app/src/main/kotlin/**/MainActivity.kt
-          echo "V1 files deleted successfully"
+          echo "Searching and deleting ALL V1 files"
+          find android -type f \( -name "*.java" -o -name "*.kt" \) -exec grep -l "io.flutter.app\|FlutterActivity" {} \; | xargs rm -f
+          echo "V1 files nuked"
+      - name: SHOW MAINACTIVITY
+        script: |
+          echo "Checking what MainActivity files are left"
+          find android -name "MainActivity.*"
+          echo "--- Content of MainActivity ---"
+          cat android/app/src/main/kotlin/com/zimconnect/shoferider/MainActivity.kt || cat android/app/src/main/java/com/zimconnect/shoferider/MainActivity.java || echo "No MainActivity found"
       - name: Install Dependencies
         script: flutter pub get
       - name: Clean Android
