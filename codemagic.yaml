@@ -8,6 +8,10 @@ workflows:
       cocoapods: default
       xcode: latest
     scripts:
+    - name: VERIFY V2
+  script: |
+    echo "Checking AndroidManifest"
+    cat android/app/src/main/AndroidManifest.xml | grep flutterEmbedding
       - name: Force Flutter 3.22.3
         script: |
           flutter --version
