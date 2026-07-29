@@ -1,6 +1,6 @@
-package com.zimconnect.shofe_rider
+package com.shoferider.shofe_rider
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity: FlutterActivity() {
+class MainActivity: FlutterFragmentActivity() {
 }
