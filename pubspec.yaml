@@ -54,4 +54,3 @@ flutter:
 dependency_overrides:
   flutter_native_splash: ^2.4.3
   flutter_plugin_android_lifecycle: ^2.0.26
-  flutter_plugin_android_lifecycle: ^2.0.19
