@@ -23,14 +23,25 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.0'
+          flutter-version: '3.27.4'
           channel: 'stable'
-          cache: true
+          cache: false
+      
+      - name: NUKE V1 FILES EVERYWHERE
+        run: |
+          rm -rf .flutter-plugins .flutter-plugins-dependencies
+          rm -rf android/.gradle android/build build
+          flutter clean
       
       - name: Install dependencies
         run: flutter pub get
       
-      - name: Build APK
+      - name: VERIFY NO V1 PLUGINS
+        run: |
+          echo "Checking for V1 plugins..."
+          grep -r "io.flutter.plugins" .flutter-plugins-dependencies || echo "Clean"
+      
+      - name: Build Android APK
         run: flutter build apk --release --verbose
       
       - name: Upload APK
