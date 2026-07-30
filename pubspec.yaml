@@ -1,23 +1,23 @@
 name: shofe_rider
-description: Shofe Rider App
+description: "Shofe Rider App"
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: '>=3.5.0 <4.0.0'
   flutter: ">=3.27.0"
 
 dependencies:
   flutter:
     sdk: flutter
   
-  # V2 PLUGINS ONLY
+  # V2 PLUGINS ONLY - NO V1
   mobile_scanner: ^5.1.2
   webview_flutter: ^4.7.0
-  image_picker: ^1.1.0  # <-- CAMERA + GALLERY V2
-  file_picker: ^8.1.5   # <-- Optional: for files/docs
-  geolocator: ^13.0.2
-  google_maps_flutter: ^2.7.0
+  image_picker: ^1.1.2
+  file_picker: ^8.1.5
+  geolocator: ^11.0.0
+  permission_handler: ^11.3.1
   http: ^1.2.2
   provider: ^6.1.2
   shared_preferences: ^2.3.2
@@ -25,6 +25,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
