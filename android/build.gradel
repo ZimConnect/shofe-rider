@@ -1,12 +1,12 @@
 buildscript {
-    ext.kotlin_version = '1.9.24'  // <-- CHANGED
+    ext.kotlin_version = '1.9.22' // <-- MAKE SURE THIS IS 1.9.22
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.2'  // <-- CHANGED
+        classpath 'com.android.tools.build:gradle:8.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -19,8 +19,6 @@ allprojects {
 }
 
 rootProject.buildDir = '../build'
-project('app').projectDir = new File('app')
-
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
@@ -28,6 +26,6 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
