@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.zimconnect.shofe_rider"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -39,7 +39,7 @@ android {
     defaultConfig {
         applicationId "com.zimconnect.shofe_rider"
         minSdkVersion 23
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -54,8 +54,9 @@ android {
 flutter {
     source '../..'
 }
+
 android {
-    // ... keep everything you already have
+    // keep everything you already have above
 }
 
 gradle.projectsEvaluated {
@@ -73,4 +74,5 @@ subprojects {
         }
     }
 }
+
 dependencies {}
