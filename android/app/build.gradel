@@ -54,5 +54,23 @@ android {
 flutter {
     source '../..'
 }
+android {
+    // ... keep everything you already have
+}
 
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'io.flutter') {
+                details.useVersion "3.22.0"
+            }
+        }
+    }
+}
 dependencies {}
