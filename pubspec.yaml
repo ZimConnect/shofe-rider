@@ -51,5 +51,3 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
-dependency_overrides:
-  flutter_native_splash: ^2.3.3
