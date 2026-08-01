@@ -53,4 +53,3 @@ flutter:
     - assets/icons/
 dependency_overrides:
   flutter_native_splash: ^2.3.3
-  flutter_plugin_android_lifecycle: ^2.0.26
