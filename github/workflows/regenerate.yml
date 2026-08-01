@@ -1,26 +1,32 @@
-    name: Regenerate Android V2
-    on:
-      workflow_dispatch:
+name: Regenerate Android V2
+on:
+  workflow_dispatch:
 
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - uses: actions/setup-java@v4
-            with:
-              distribution: 'temurin'
-              java-version: '17'
-          - uses: subosito/flutter-action@v2
-            with:
-              flutter-version: '3.22.0'
-          - name: Generate Clean Android V2
-            run: |
-              flutter create . --platforms=android
-          - name: Commit Clean Android
-            run: |
-              git config user.name "github-actions"
-              git config user.email "actions@github.com"
-              git add android/
-              git commit -m "Regenerate clean Android V2 folder" || exit 0
-              git push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: DELETE OLD ANDROID FOLDER
+        run: rm -rf android
+        
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+          
+      - name: CREATE CLEAN ANDROID V2 FOLDER
+        run: flutter create . --platforms=android
+        
+      - name: COMMIT NEW ANDROID
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add android/
+          git commit -m "Regenerate clean Android V2 folder" || echo "No changes"
+          git push
