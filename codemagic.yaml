@@ -1,4 +1,3 @@
-
 workflows:
   shoferider-full-build:
     name: ShofeRider Android + iOS + Web
@@ -9,13 +8,18 @@ workflows:
       xcode: 15.4
       cocoapods: default
     scripts:
+      - name: Delete old android/ios folders
+        script: |
+          rm -rf android ios web
+          
+      - name: Force recreate all platforms
+        script: |
+          flutter create . --platforms=android,ios,web --overwrite
+          ls -la  # This will prove android folder exists
+          
       - name: Get dependencies
         script: |
           flutter pub get
-          
-      - name: Fix Gradle - Recreate platforms
-        script: |
-          flutter create . --platforms=android,ios,web --overwrite
           
       - name: Build Android APK
         script: |
