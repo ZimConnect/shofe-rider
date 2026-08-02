@@ -1,6 +1,6 @@
 workflows:
   shoferider-full-build:
-    name: ShofeRider Android + iOS + Web
+    name: ShofeRider Force Flutter Create
     max_build_duration: 120
     instance_type: mac_mini_m2
     environment:
@@ -8,14 +8,16 @@ workflows:
       xcode: 15.4
       cocoapods: default
     scripts:
-      - name: Delete old android/ios folders
+      - name: Create Flutter project from scratch
         script: |
-          rm -rf android ios web
+          flutter create shoferider_app --platforms=android,ios,web
+          cp -r shoferider_app/* .
+          cp -r shoferider_app/.* . 2>/dev/null || true
+          rm -rf shoferider_app
           
-      - name: Force recreate all platforms
+      - name: Copy your lib folder back
         script: |
-          flutter create . --platforms=android,ios,web --overwrite
-          ls -la  # This will prove android folder exists
+          git checkout HEAD -- lib/ 2>/dev/null || true
           
       - name: Get dependencies
         script: |
