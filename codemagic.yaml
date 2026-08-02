@@ -1,1 +1,45 @@
 
+workflows:
+  shoferider-full-build:
+    name: ShofeRider Android + iOS + Web
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+    environment:
+      flutter: 3.22.0
+      xcode: 15.4
+      cocoapods: default
+    scripts:
+      - name: Get dependencies
+        script: |
+          flutter pub get
+          
+      - name: Fix Gradle - Recreate platforms
+        script: |
+          flutter create . --platforms=android,ios,web --overwrite
+          
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+          
+      - name: Build Android AppBundle
+        script: |
+          flutter build appbundle --release
+          
+      - name: Build iOS
+        script: |
+          flutter build ios --release --no-codesign
+          
+      - name: Build Web
+        script: |
+          flutter build web --release
+
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/app/outputs/bundle/release/app-release.aab
+      - build/ios/iphoneos/Runner.app
+      - build/web/**
+    
+    publishing:
+      email:
+        recipients:
+          - shofe.zimconnect@gmail.com
