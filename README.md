@@ -21,3 +21,4 @@ flutter build apk --release
 flutter build appbundle --release
 flutter build web --release
 flutter build ipa --release
+
