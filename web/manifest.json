@@ -1,0 +1,12 @@
+{
+  "name": "Shofe Rider",
+  "short_name": "Shofe",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0175C2",
+  "theme_color": "#0175C2",
+  "description": "Shofe Rider App",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}
