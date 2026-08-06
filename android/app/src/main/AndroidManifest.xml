@@ -1,9 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zimconnect.shoferider">
-    
-   <application
-        android:name="${applicationName}"
+    package="com.example.shoferider">
+    <application
         android:label="Shofe Rider"
+        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
