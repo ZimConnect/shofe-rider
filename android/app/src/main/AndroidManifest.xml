@@ -3,7 +3,7 @@
     
    <application
         android:name="${applicationName}"
-        android:label="shofe_rider"
+        android:label="Shofe Rider"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
