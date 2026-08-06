@@ -34,3 +34,4 @@ jobs:
       with:
         name: shofe-rider-apk
         path: build/app/outputs/flutter-apk/app-release.apk
+
