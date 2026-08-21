@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Shofe Rider</title>
-  
-  <script defer src="flutter.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShofeRider - Driver App for ZimConnect</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#006400,#FFD700);color:#fff;text-align:center;padding:20px}
+.container{max-width:500px;margin:40px auto;background:rgba(0,0,0,0.7);padding:30px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+.logo{width:120px;height:120px;border-radius:50%;border:4px solid #FFD700;margin:0 auto 15px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:40px}
+h1{font-size:28px;margin-bottom:5px}
+.tagline{font-size:14px;color:#FFD700;margin-bottom:20px}
+.card{background:#fff;color:#333;padding:20px;border-radius:10px;margin:15px 0;text-align:left}
+.card h3{color:#006400;margin-bottom:10px}
+.btn{display:block;width:100%;padding:15px;margin:10px 0;border:0;border-radius:10px;font-weight:bold;font-size:16px;text-decoration:none;color:#fff;cursor:pointer}
+.btn-driver{background:#006400}
+.btn-passenger{background:#FF0000}
+.btn-download{background:#FFD700;color:#000}
+.features{list-style:none;text-align:left}
+.features li{padding:8px 0}
+.features li:before{content:"✅ ";color:#FFD700}
+.footer{margin-top:20px;font-size:12px;opacity:0.8}
+</style>
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      flutter_loader.load();
-    });
-  </script>
+
+<div class="container">
+  <div class="logo">🚗</div>
+  <h1>ShofeRider</h1>
+  <p class="tagline">Driver App for ZimConnect 🇿🇼</p>
+
+  <div class="card">
+    <h3>🔥 For Drivers</h3>
+    <ul class="features">
+      <li>Accept rides near you</li>
+      <li>Google Maps + Real-time navigation</li>
+      <li>Earn money daily via EcoCash</li>
+      <li>24/7 Driver Support</li>
+    </ul>
+    <a href="#" class="btn btn-download" data-alert="APK coming soon. Join WhatsApp group for beta.">📲 DOWNLOAD DRIVER APP</a>
+  </div>
+
+  <!-- NEW PASSENGER SECTION -->
+  <div class="card">
+    <h3>👤 Need a Ride?</h3>
+    <p>If you are a passenger, book your ride on the main ZimConnect app.</p>
+    <a href="https://connect.github.io" class="btn btn-passenger">🚕 BOOK A RIDE NOW</a>
+  </div>
+
+  <div class="card">
+    <h3>📞 Driver Support</h3>
+    <p>WhatsApp: +263 77 XXX XXXX</p>
+    <p>Email: drivers@zimconnect.co.zw</p>
+    <a href="https://wa.me/26377XXXXXXX" class="btn btn-driver">💬 JOIN DRIVER WHATSAPP GROUP</a>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 ZimConnect. All rights reserved.</p>
+    <p>Package: com.zimconnect.shoferider</p>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('[data-alert]').forEach(el => {
+  el.addEventListener('click',() => alert(el.dataset.alert));
+});
+</script>
 </body>
 </html>
